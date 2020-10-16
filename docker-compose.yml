@@ -1,5 +1,5 @@
 # SSL certificates for development
-# $ mkcert oleksandr-kulbachenko.local www.oleksandr-kulbachenko.local
+# $ mkcert oleksandr-kulbachenko.local www.oleksandr-kulbachenko.local oleksandr-kulbachenko-additional.local www.oleksandr-kulbachenko-additional.local
 #
 # Start composition:
 # $ docker-compose up -d
@@ -27,36 +27,36 @@ services:
     labels:
       - traefik.enable=true
       # HTTP
-      - traefik.http.routers.oleksandr-kulbachenko-local-http.rule=Host(`oleksandr-kulbachenko.local`,`www.oleksandr-kulbachenko.local`)
+      - traefik.http.routers.oleksandr-kulbachenko-local-http.rule=Host(`oleksandr-kulbachenko.local`,`www.oleksandr-kulbachenko.local`,`oleksandr-kulbachenko-additional.local`,`www.oleksandr-kulbachenko-additional.local`)
       - traefik.http.routers.oleksandr-kulbachenko-local-http.entrypoints=http
       - traefik.http.routers.oleksandr-kulbachenko-local-http.service=oleksandr-kulbachenko-local-http
       - traefik.http.services.oleksandr-kulbachenko-local-http.loadbalancer.server.port=80
       - traefik.http.services.oleksandr-kulbachenko-local-http.loadbalancer.server.scheme=http
       # HTTPS
-      - traefik.http.routers.oleksandr-kulbachenko-local-https.rule=Host(`oleksandr-kulbachenko.local`,`www.oleksandr-kulbachenko.local`)
+      - traefik.http.routers.oleksandr-kulbachenko-local-https.rule=Host(`oleksandr-kulbachenko.local`,`www.oleksandr-kulbachenko.local`,`oleksandr-kulbachenko-additional.local`,`www.oleksandr-kulbachenko-additional.local`)
       - traefik.http.routers.oleksandr-kulbachenko-local-https.entrypoints=https
       - traefik.http.routers.oleksandr-kulbachenko-local-https.tls=true
       - traefik.http.routers.oleksandr-kulbachenko-local-https.service=oleksandr-kulbachenko-local-https
       - traefik.http.services.oleksandr-kulbachenko-local-https.loadbalancer.server.port=443
       - traefik.http.services.oleksandr-kulbachenko-local-https.loadbalancer.server.scheme=https
       # Develop with extension that allows setting livereload host and port - https://github.com/lokcito/livereload-extensions
-      - traefik.http.routers.oleksandr-kulbachenko-local-livereload-https.rule=Host(`oleksandr-kulbachenko.local`,`www.oleksandr-kulbachenko.local`)
+      - traefik.http.routers.oleksandr-kulbachenko-local-livereload-https.rule=Host(`oleksandr-kulbachenko.local`,`www.oleksandr-kulbachenko.local`,`oleksandr-kulbachenko-additional.local`,`www.oleksandr-kulbachenko-additional.local`)
       - traefik.http.routers.oleksandr-kulbachenko-local-livereload-https.entrypoints=livereload-https
       - traefik.http.routers.oleksandr-kulbachenko-local-livereload-https.tls=true
       - traefik.http.routers.oleksandr-kulbachenko-local-livereload-https.service=oleksandr-kulbachenko-local-livereload-https
       - traefik.http.services.oleksandr-kulbachenko-local-livereload-https.loadbalancer.server.port=35729
       - traefik.http.services.oleksandr-kulbachenko-local-livereload-https.loadbalancer.server.scheme=http
-      - traefik.http.routers.oleksandr-kulbachenko-local-livereload-http.rule=Host(`oleksandr-kulbachenko.local`,`www.oleksandr-kulbachenko.local`)
+      - traefik.http.routers.oleksandr-kulbachenko-local-livereload-http.rule=Host(`oleksandr-kulbachenko.local`,`www.oleksandr-kulbachenko.local`,`oleksandr-kulbachenko-additional.local`,`www.oleksandr-kulbachenko-additional.local`)
       - traefik.http.routers.oleksandr-kulbachenko-local-livereload-http.entrypoints=livereload-http
       - traefik.http.routers.oleksandr-kulbachenko-local-livereload-http.service=oleksandr-kulbachenko-local-livereload-http
       - traefik.http.services.oleksandr-kulbachenko-local-livereload-http.loadbalancer.server.port=35729
       - traefik.http.services.oleksandr-kulbachenko-local-livereload-http.loadbalancer.server.scheme=http
     # Must add extra_hosts to be written to /etc/hosts - otherwise containerized application can not curl itself
     extra_hosts:
-      - "oleksandr-kulbachenko.local www.oleksandr-kulbachenko.local:127.0.0.1"
+      - "oleksandr-kulbachenko.local www.oleksandr-kulbachenko.local oleksandr-kulbachenko-additional.local www.oleksandr-kulbachenko-additional.local:127.0.0.1"
       # Required for xDebug on Linux hosts till docker.host.internal is not available by default - https://github.com/docker/libnetwork/pull/2348/files
       - "host.docker.internal:172.17.0.1"
-   links:
+    links:
 #      - memcached
 #      - redis
      - elasticsearch
