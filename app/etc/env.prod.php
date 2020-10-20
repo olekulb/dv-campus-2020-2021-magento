@@ -76,5 +76,41 @@ return [
     ],
     'install' => [
         'date' => 'Tue, 06 Oct 2020 09:12:36 +0000'
+    ],
+    'system' => [
+        'default' => [
+            'web' => [
+                'unsecure' => [
+                    'base_url' => 'https://oleksandr-kulbachenko.local/',
+                    'base_link_url' => '{{unsecure_base_url}}',
+                    'base_static_url' => 'https://oleksandr-kulbachenko.local/static/',
+                    'base_media_url' => 'https://oleksandr-kulbachenko.local/media/'
+                ],
+                'secure' => [
+                    'base_url' => 'https://oleksandr-kulbachenko.local/',
+                    'base_link_url' => '{{secure_base_url}}',
+                    'base_static_url' => 'https://oleksandr-kulbachenko.local/static/',
+                    'base_media_url' => 'https://oleksandr-kulbachenko.local/media/'
+                ],
+            ],
+        ],
+        'websites' => [
+            'additional_website' => [
+                'web' => [
+                    'unsecure' => [
+                        'base_url' => 'https://oleksandr-kulbachenko-additional.local/',
+                        'base_link_url' => 'https://oleksandr-kulbachenko-additional.local/',
+                        'base_static_url' => 'https://oleksandr-kulbachenko-additional.local/static/',
+                        'base_media_url' => 'https://oleksandr-kulbachenko-additional.local/media/'
+                    ],
+                    'secure' => [
+                        'base_url' => 'https://oleksandr-kulbachenko-additional.local/',
+                        'base_link_url' => 'https://oleksandr-kulbachenko-additional.local/',
+                        'base_static_url' => 'https://oleksandr-kulbachenko-additional.local/static/',
+                        'base_media_url' => 'https://oleksandr-kulbachenko-additional.local/media/'
+                    ]
+                ]
+            ]
+        ]
     ]
 ];
