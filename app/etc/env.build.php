@@ -14,9 +14,9 @@ return [
         'connection' => [
             'default' => [
                 'host' => 'mysql',
-                'dbname' => 'oleksandr_kulbachenko_local',
-                'username' => 'oleksandr_kulbachenko_local',
-                'password' => 'oleksandr_kulbachenko_local',
+                'dbname' => 'oleksandr_kulbachenko_build_local',
+                'username' => 'oleksandr_kulbachenko_build_local',
+                'password' => '^vy89[545o5[%b%vsdf',
                 'model' => 'mysql4',
                 'engine' => 'innodb',
                 'initStatements' => 'SET NAMES utf8;',
@@ -72,7 +72,7 @@ return [
         'vertex' => 1
     ],
     'downloadable_domains' => [
-        'oleksandr-kulbachenko.local'
+        'oleksandr-kulbachenko-dev.local'
     ],
     'install' => [
         'date' => 'Tue, 06 Oct 2020 09:12:36 +0000'
@@ -81,33 +81,33 @@ return [
         'default' => [
             'web' => [
                 'unsecure' => [
-                    'base_url' => 'https://oleksandr-kulbachenko.local/',
+                    'base_url' => 'https://oleksandr-kulbachenko-dev.local/',
                     'base_link_url' => '{{unsecure_base_url}}',
-                    'base_static_url' => 'https://oleksandr-kulbachenko.local/static/',
-                    'base_media_url' => 'https://oleksandr-kulbachenko.local/media/'
+                    'base_static_url' => 'https://oleksandr-kulbachenko-dev.local/static/',
+                    'base_media_url' => 'https://oleksandr-kulbachenko-dev.local/media/'
                 ],
                 'secure' => [
-                    'base_url' => 'https://oleksandr-kulbachenko.local/',
+                    'base_url' => 'https://oleksandr-kulbachenko-dev.local/',
                     'base_link_url' => '{{secure_base_url}}',
-                    'base_static_url' => 'https://oleksandr-kulbachenko.local/static/',
-                    'base_media_url' => 'https://oleksandr-kulbachenko.local/media/'
-                ]
-            ]
+                    'base_static_url' => 'https://oleksandr-kulbachenko-dev.local/static/',
+                    'base_media_url' => 'https://oleksandr-kulbachenko-dev.local/media/'
+                ],
+            ],
         ],
         'websites' => [
             'additional_website' => [
                 'web' => [
                     'unsecure' => [
-                        'base_url' => 'https://oleksandr-kulbachenko-additional.local/',
-                        'base_link_url' => 'https://oleksandr-kulbachenko-additional.local/',
-                        'base_static_url' => 'https://oleksandr-kulbachenko-additional.local/static/',
-                        'base_media_url' => 'https://oleksandr-kulbachenko-additional.local/media/'
+                        'base_url' => 'https://oleksandr-kulbachenko-additional-dev.local/',
+                        'base_link_url' => 'https://oleksandr-kulbachenko-additional-dev.local/',
+                        'base_static_url' => 'https://oleksandr-kulbachenko-additional-dev.local/static/',
+                        'base_media_url' => 'https://oleksandr-kulbachenko-additional-dev.local/media/'
                     ],
                     'secure' => [
-                        'base_url' => 'https://oleksandr-kulbachenko-additional.local/',
-                        'base_link_url' => 'https://oleksandr-kulbachenko-additional.local/',
-                        'base_static_url' => 'https://oleksandr-kulbachenko-additional.local/static/',
-                        'base_media_url' => 'https://oleksandr-kulbachenko-additional.local/media/'
+                        'base_url' => 'https://oleksandr-kulbachenko-additional-dev.local/',
+                        'base_link_url' => 'https://oleksandr-kulbachenko-additional-dev.local/',
+                        'base_static_url' => 'https://oleksandr-kulbachenko-additional-dev.local/static/',
+                        'base_media_url' => 'https://oleksandr-kulbachenko-additional-dev.local/media/'
                     ]
                 ]
             ]
