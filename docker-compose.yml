@@ -1,5 +1,5 @@
 # SSL certificates for development
-# $ mkcert oleksandr-kulbachenko.local www.oleksandr-kulbachenko.local oleksandr-kulbachenko-additional.local www.oleksandr-kulbachenko-additional.local
+# $ mkcert oleksandr-kulbachenko.local www.oleksandr-kulbachenko.local oleksandr-kulbachenko-additional.local www.oleksandr-kulbachenko-additional.local oleksandr-kulbachenko-dev.local www.oleksandr-kulbachenko-dev.local oleksandr-kulbachenko-additional-dev.local www.oleksandr-kulbachenko-additional-dev.local
 #
 # Start composition:
 # $ docker-compose up -d
